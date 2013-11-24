@@ -23,8 +23,8 @@ namespace TrafficTicketMan.Models
         public int UserRoleId { get; set; }
         public UserRole UserRole { get; set; }
 
-        [Required]
-        public int TrafficOfficeId { get; set; }
-        public TrafficOffice TrafficOffice { get; set; }
+        //[Required]
+        //public int TrafficOfficeId { get; set; }
+        //public TrafficOffice TrafficOffice { get; set; }
     }
 }
