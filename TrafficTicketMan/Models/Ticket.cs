@@ -10,9 +10,11 @@ namespace TrafficTicketMan.Models
     {
         public int TicketId { get; set; }
 
-        [Required]
-        [Display (Name="Issued By")]
-        public int UserId { get; set; }
-        public User User { get; set; }
+
+
+        //[Required]
+        //[Display (Name="Issued By")]
+        //public int UserId { get; set; }
+        //public User User { get; set; }
     }
 }
