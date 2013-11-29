@@ -1,0 +1,141 @@
+﻿@model TrafficTicketMan.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Ticket</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Entity.EntityName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Entity.EntityName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PoliceStation.PoliceStationId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PoliceStation.PoliceStationId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CRnumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CRnumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PlaceOfTrial)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PlaceOfTrial)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InvestigationOfficer.EmpNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InvestigationOfficer.EmpNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CourtNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CourtNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TrialDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TrialDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OffenceType.OffenceName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OffenceType.OffenceName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OffenderDriver.DrivingLicenseNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OffenderDriver.DrivingLicenseNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OffenderVehicle.OffenderVehicleId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OffenderVehicle.OffenderVehicleId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TicketAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TicketAmount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TicketDiscrption)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TicketDiscrption)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IssueDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IssueDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ExpiryDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ExpiryDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CapturedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CapturedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IssuePlace)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IssuePlace)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PeaceOfficerCapacity.Capacity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PeaceOfficerCapacity.Capacity)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TicketId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

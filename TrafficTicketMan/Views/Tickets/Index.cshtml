@@ -1,0 +1,135 @@
+﻿@model IEnumerable<TrafficTicketMan.Models.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Entity.EntityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PoliceStation.PoliceStationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CRnumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceOfTrial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InvestigationOfficer.EmpNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrialDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OffenceType.OffenceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OffenderDriver.DrivingLicenseNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OffenderVehicle.OffenderVehicleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketDiscrption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IssueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpiryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CapturedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IssuePlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PeaceOfficerCapacity.Capacity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Entity.EntityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PoliceStation.PoliceStationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CRnumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceOfTrial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvestigationOfficer.EmpNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourtNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrialDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OffenceType.OffenceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OffenderDriver.DrivingLicenseNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OffenderVehicle.OffenderVehicleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketDiscrption)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IssueDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpiryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CapturedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IssuePlace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PeaceOfficerCapacity.Capacity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TicketId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TicketId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TicketId })
+        </td>
+    </tr>
+}
+
+</table>
