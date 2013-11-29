@@ -10,10 +10,10 @@ namespace TrafficTicketMan.Models
     {
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TrafficOffice> TrafficOffices { get; set; }
-        public DbSet<TrafficOfficer> TrafficOfficers { get; set; }
+        public DbSet<InvestigationOfficer> TrafficOfficers { get; set; }
         public DbSet<Region> Regions { get; set; }
-        public DbSet<Town> Towns { get; set; }
-        public DbSet<Zone> Zones { get; set; }
+        //public DbSet<Town> Towns { get; set; }
+        //public DbSet<Zone> Zones { get; set; }
         public DbSet<Entity> Entities { get; set; }
         public DbSet<IDType> IDTypes { get; set; }
         public DbSet<OffenderDriver> OffenderDrivers { get; set; }
@@ -22,5 +22,9 @@ namespace TrafficTicketMan.Models
         public DbSet<OfficeDeployment> OfficeDeployment { get; set; }
         public DbSet<DeploymentHistory> DeploymentHistory { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<District> Districts { get; set; }
+        public DbSet<Nationality> Nationalities { get; set; }
+        public DbSet<PeaceOfficerCapacity> PeaceOfficerCapacities { get; set; }
+        public DbSet<PoliceStation> PoliceStations { get; set; }
     }
 }

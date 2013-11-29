@@ -16,7 +16,7 @@ namespace TrafficTicketMan.Models
 
         [Required]
         public int TrafficOfficerId { get; set; }
-        public TrafficOfficer TrafficOfficer { get; set; }
+        public InvestigationOfficer TrafficOfficer { get; set; }
 
     }
 }

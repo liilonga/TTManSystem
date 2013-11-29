@@ -6,11 +6,11 @@ using System.Web;
 
 namespace TrafficTicketMan.Models
 {
-    public class Region
+    public class District
     {
-        public int RegionId { get; set; }
+        public int DistrictId { get; set; }
         [Required]
-        [Display(Name = "Name")]
-        public string RegionName { get; set; }
+        [Display(Name = "District/Division")]
+        public string DistrictName { get; set; }
     }
 }

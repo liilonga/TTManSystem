@@ -190,17 +190,21 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DeploymentHistoryc.cs" />
+    <Compile Include="Models\District.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\IDType.cs" />
+    <Compile Include="Models\Nationality.cs" />
     <Compile Include="Models\OffenceType.cs" />
     <Compile Include="Models\OffenderCar.cs" />
     <Compile Include="Models\OffenderDriver.cs" />
     <Compile Include="Models\OfficeDeployment.cs" />
+    <Compile Include="Models\PeaceOfficerCapacity.cs" />
+    <Compile Include="Models\PoliceStation.cs" />
     <Compile Include="Models\Region.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\Town.cs" />
     <Compile Include="Models\TrafficOffice.cs" />
-    <Compile Include="Models\TrafficOfficer.cs" />
+    <Compile Include="Models\InvestigationOfficer.cs" />
     <Compile Include="Models\TTMDataContext.cs" />
     <Compile Include="Models\TTMDataContextInitializer.cs" />
     <Compile Include="Models\User.cs" />

@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Text;
 
 namespace TrafficTicketMan.Models
 {
-    public class Region
+    public class Nationality
     {
-        public int RegionId { get; set; }
+        public int NationalityId { get; set; }
         [Required]
-        [Display(Name = "Name")]
-        public string RegionName { get; set; }
+        public int Country { get; set; }
     }
 }

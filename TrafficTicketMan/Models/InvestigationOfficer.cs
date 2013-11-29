@@ -6,9 +6,9 @@ using System.Web;
 
 namespace TrafficTicketMan.Models
 {
-    public class TrafficOfficer
+    public class InvestigationOfficer
     {
-        public int TrafficOfficerId { get; set; }
+        public int InvestigationOfficerId { get; set; }
 
         [Required]
         [Display(Name = "Employee Number")]
