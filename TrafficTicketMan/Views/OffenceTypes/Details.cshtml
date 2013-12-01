@@ -1,0 +1,29 @@
+﻿@model TrafficTicketMan.Models.OffenceType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>OffenceType</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OffenceName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OffenceName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OffenceDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OffenceDescription)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.OffenceTypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

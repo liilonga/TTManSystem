@@ -8,6 +8,7 @@ namespace TrafficTicketMan.Models
 {
     public class Entity
     {
+        [Display(Name = "Ticket Issued On")]
         public int EntityId { get; set; }
         [Required]
         [Display(Name = "Ticket Issued On")]

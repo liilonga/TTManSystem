@@ -182,7 +182,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DistrictsController.cs" />
+    <Compile Include="Controllers\EntitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvestigationOfficersController.cs" />
+    <Compile Include="Controllers\OffenceTypesController.cs" />
+    <Compile Include="Controllers\PoliceStationsController.cs" />
     <Compile Include="Controllers\RegionController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -336,6 +341,31 @@
     <Content Include="Views\Tickets\Create.cshtml" />
     <Content Include="Views\Tickets\Edit.cshtml" />
     <Content Include="Views\Tickets\Delete.cshtml" />
+    <Content Include="Views\Entities\Index.cshtml" />
+    <Content Include="Views\Entities\Details.cshtml" />
+    <Content Include="Views\Entities\Create.cshtml" />
+    <Content Include="Views\Entities\Edit.cshtml" />
+    <Content Include="Views\Entities\Delete.cshtml" />
+    <Content Include="Views\PoliceStations\Index.cshtml" />
+    <Content Include="Views\PoliceStations\Details.cshtml" />
+    <Content Include="Views\PoliceStations\Create.cshtml" />
+    <Content Include="Views\PoliceStations\Edit.cshtml" />
+    <Content Include="Views\PoliceStations\Delete.cshtml" />
+    <Content Include="Views\Districts\Index.cshtml" />
+    <Content Include="Views\Districts\Details.cshtml" />
+    <Content Include="Views\Districts\Create.cshtml" />
+    <Content Include="Views\Districts\Edit.cshtml" />
+    <Content Include="Views\Districts\Delete.cshtml" />
+    <Content Include="Views\InvestigationOfficers\Index.cshtml" />
+    <Content Include="Views\InvestigationOfficers\Details.cshtml" />
+    <Content Include="Views\InvestigationOfficers\Create.cshtml" />
+    <Content Include="Views\InvestigationOfficers\Edit.cshtml" />
+    <Content Include="Views\InvestigationOfficers\Delete.cshtml" />
+    <Content Include="Views\OffenceTypes\Index.cshtml" />
+    <Content Include="Views\OffenceTypes\Details.cshtml" />
+    <Content Include="Views\OffenceTypes\Create.cshtml" />
+    <Content Include="Views\OffenceTypes\Edit.cshtml" />
+    <Content Include="Views\OffenceTypes\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

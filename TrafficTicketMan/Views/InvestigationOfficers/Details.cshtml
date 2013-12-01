@@ -1,0 +1,36 @@
+﻿@model TrafficTicketMan.Models.InvestigationOfficer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>InvestigationOfficer</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmpNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmpNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.InvestigationOfficerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

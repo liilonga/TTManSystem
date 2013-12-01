@@ -12,7 +12,7 @@ namespace TrafficTicketMan.Models
 
         [Required]
         [Display(Name = "Police Station")]
-        public int StationName { get; set; }
+        public string StationName { get; set; }
 
         [Required]
         [Display(Name = "District/Division")]

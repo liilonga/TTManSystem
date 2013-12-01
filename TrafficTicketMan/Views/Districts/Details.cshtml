@@ -1,0 +1,22 @@
+﻿@model TrafficTicketMan.Models.District
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>District</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DistrictName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DistrictName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.DistrictId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

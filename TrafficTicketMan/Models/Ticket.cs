@@ -13,6 +13,7 @@ namespace TrafficTicketMan.Models
         [Required]
         [Display(Name = "Ticket Issued On")]
         public int EntityId { get; set; }
+        [Display(Name = "Ticket Issued On")]
         public Entity Entity { get; set; }
 
         //[Required]

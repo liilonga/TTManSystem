@@ -1,0 +1,22 @@
+﻿@model TrafficTicketMan.Models.Entity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Entity</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EntityName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EntityName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EntityId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

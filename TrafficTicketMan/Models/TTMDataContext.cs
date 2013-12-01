@@ -10,7 +10,7 @@ namespace TrafficTicketMan.Models
     {
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TrafficOffice> TrafficOffices { get; set; }
-        public DbSet<InvestigationOfficer> TrafficOfficers { get; set; }
+        public DbSet<InvestigationOfficer> InvestigationOfficers { get; set; }
         public DbSet<Region> Regions { get; set; }
         //public DbSet<Town> Towns { get; set; }
         //public DbSet<Zone> Zones { get; set; }

@@ -13,16 +13,10 @@
     <fieldset>
         <legend>Ticket</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.EntityId, "Entity")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("EntityId", String.Empty)
-            @Html.ValidationMessageFor(model => model.EntityId)
-        </div>
+        
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.PoliceStationId, "PoliceStation")
+            @Html.LabelFor(model => model.PoliceStationId, "Police Station")
         </div>
         <div class="editor-field">
             @Html.DropDownList("PoliceStationId", String.Empty)
@@ -46,7 +40,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.InvestigationOfficerId, "InvestigationOfficer")
+            @Html.LabelFor(model => model.InvestigationOfficerId, "Investigation Officer")
         </div>
         <div class="editor-field">
             @Html.DropDownList("InvestigationOfficerId", String.Empty)
@@ -70,15 +64,15 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OffenceTypeId, "OffenceType")
+            @Html.LabelFor(model => model.EntityId, "Ticket Issued On")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("OffenceTypeId", String.Empty)
-            @Html.ValidationMessageFor(model => model.OffenceTypeId)
+            @Html.DropDownList("EntityId", String.Empty)
+            @Html.ValidationMessageFor(model => model.EntityId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OffenderDriverId, "OffenderDriver")
+            @Html.LabelFor(model => model.OffenderDriverId, "To: Driver")
         </div>
         <div class="editor-field">
             @Html.DropDownList("OffenderDriverId", String.Empty)
@@ -86,11 +80,19 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OffenderVehicleId, "OffenderVehicle")
+            @Html.LabelFor(model => model.OffenderVehicleId, "To: Vehicle")
         </div>
         <div class="editor-field">
             @Html.DropDownList("OffenderVehicleId", String.Empty)
             @Html.ValidationMessageFor(model => model.OffenderVehicleId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OffenceTypeId, "Offence Type")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OffenceTypeId", String.Empty)
+            @Html.ValidationMessageFor(model => model.OffenceTypeId)
         </div>
 
         <div class="editor-label">

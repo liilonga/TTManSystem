@@ -41,8 +41,17 @@ namespace TrafficTicketMan.Controllers
         public ActionResult Create()
         {
             ViewBag.EntityId = new SelectList(db.Entities, "EntityId", "EntityName");
-            ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "PoliceStationId");
-            ViewBag.InvestigationOfficerId = new SelectList(db.TrafficOfficers, "InvestigationOfficerId", "EmpNo");
+            ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "StationName");
+
+            var InvestigationOfficers = from a in db.InvestigationOfficers
+                                        select new
+                                        {
+                                            InvestigationOfficerId = a.InvestigationOfficerId,
+                                            InvestigationOfficerFullName = a.FName + " " + a.LName
+                                        };
+
+            ViewBag.InvestigationOfficerId = new SelectList(InvestigationOfficers, "InvestigationOfficerId", "InvestigationOfficerFullName");
+            //ViewBag.InvestigationOfficerId = new SelectList(db.InvestigationOfficers, "InvestigationOfficerId", "EmpNo");
             ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName");
             ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber");
             ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId");
@@ -67,7 +76,15 @@ namespace TrafficTicketMan.Controllers
 
             ViewBag.EntityId = new SelectList(db.Entities, "EntityId", "EntityName", ticket.EntityId);
             ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "PoliceStationId", ticket.PoliceStationId);
-            ViewBag.InvestigationOfficerId = new SelectList(db.TrafficOfficers, "InvestigationOfficerId", "EmpNo", ticket.InvestigationOfficerId);
+
+            var InvestigationOfficers = from a in db.InvestigationOfficers
+                                        select new 
+                                        {
+                                            InvestigationOfficerId = a.InvestigationOfficerId,
+                                            InvestigationOfficerFullName = a.FName +" "+a.LName
+                                        };
+
+            ViewBag.InvestigationOfficerId = new SelectList(InvestigationOfficers, "InvestigationOfficerId", "InvestigationOfficerFullName", ticket.InvestigationOfficerId);
             ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName", ticket.OffenceTypeId);
             ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber", ticket.OffenderDriverId);
             ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId", ticket.OffenderVehicleId);
@@ -88,7 +105,7 @@ namespace TrafficTicketMan.Controllers
             }
             ViewBag.EntityId = new SelectList(db.Entities, "EntityId", "EntityName", ticket.EntityId);
             ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "PoliceStationId", ticket.PoliceStationId);
-            ViewBag.InvestigationOfficerId = new SelectList(db.TrafficOfficers, "InvestigationOfficerId", "EmpNo", ticket.InvestigationOfficerId);
+            ViewBag.InvestigationOfficerId = new SelectList(db.InvestigationOfficers, "InvestigationOfficerId", "EmpNo", ticket.InvestigationOfficerId);
             ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName", ticket.OffenceTypeId);
             ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber", ticket.OffenderDriverId);
             ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId", ticket.OffenderVehicleId);
@@ -112,7 +129,7 @@ namespace TrafficTicketMan.Controllers
             }
             ViewBag.EntityId = new SelectList(db.Entities, "EntityId", "EntityName", ticket.EntityId);
             ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "PoliceStationId", ticket.PoliceStationId);
-            ViewBag.InvestigationOfficerId = new SelectList(db.TrafficOfficers, "InvestigationOfficerId", "EmpNo", ticket.InvestigationOfficerId);
+            ViewBag.InvestigationOfficerId = new SelectList(db.InvestigationOfficers, "InvestigationOfficerId", "EmpNo", ticket.InvestigationOfficerId);
             ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName", ticket.OffenceTypeId);
             ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber", ticket.OffenderDriverId);
             ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId", ticket.OffenderVehicleId);
