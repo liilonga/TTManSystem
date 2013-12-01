@@ -1,4 +1,5 @@
-﻿@model TrafficTicketMan.Models.Ticket
+﻿@*@model TrafficTicketMan.Models.Ticket*@
+@model TrafficTicketMan.ViewModels.TicketDriverVehicleViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -16,147 +17,147 @@
         
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.PoliceStationId, "Police Station")
+            @Html.LabelFor(model => model.Ticket.PoliceStationId, "Police Station")
         </div>
         <div class="editor-field">
             @Html.DropDownList("PoliceStationId", String.Empty)
-            @Html.ValidationMessageFor(model => model.PoliceStationId)
+            @Html.ValidationMessageFor(model => model.Ticket.PoliceStationId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CRnumber)
+            @Html.LabelFor(model => model.Ticket.CRnumber)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CRnumber)
-            @Html.ValidationMessageFor(model => model.CRnumber)
+            @Html.EditorFor(model => model.Ticket.CRnumber)
+            @Html.ValidationMessageFor(model => model.Ticket.CRnumber)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.PlaceOfTrial)
+            @Html.LabelFor(model => model.Ticket.PlaceOfTrial)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.PlaceOfTrial)
-            @Html.ValidationMessageFor(model => model.PlaceOfTrial)
+            @Html.EditorFor(model => model.Ticket.PlaceOfTrial)
+            @Html.ValidationMessageFor(model => model.Ticket.PlaceOfTrial)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.InvestigationOfficerId, "Investigation Officer")
+            @Html.LabelFor(model => model.Ticket.InvestigationOfficerId, "Investigation Officer")
         </div>
         <div class="editor-field">
             @Html.DropDownList("InvestigationOfficerId", String.Empty)
-            @Html.ValidationMessageFor(model => model.InvestigationOfficerId)
+            @Html.ValidationMessageFor(model => model.Ticket.InvestigationOfficerId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CourtNo)
+            @Html.LabelFor(model => model.Ticket.CourtNo)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CourtNo)
-            @Html.ValidationMessageFor(model => model.CourtNo)
+            @Html.EditorFor(model => model.Ticket.CourtNo)
+            @Html.ValidationMessageFor(model => model.Ticket.CourtNo)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TrialDate)
+            @Html.LabelFor(model => model.Ticket.TrialDate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TrialDate)
-            @Html.ValidationMessageFor(model => model.TrialDate)
+            @Html.EditorFor(model => model.Ticket.TrialDate)
+            @Html.ValidationMessageFor(model => model.Ticket.TrialDate)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.EntityId, "Ticket Issued On")
+            @Html.LabelFor(model => model.Ticket.EntityId, "Ticket Issued On")
         </div>
         <div class="editor-field">
             @Html.DropDownList("EntityId", String.Empty)
-            @Html.ValidationMessageFor(model => model.EntityId)
+            @Html.ValidationMessageFor(model => model.Ticket.EntityId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OffenderDriverId, "To: Driver")
+            @Html.LabelFor(model => model.OffenderDriver.OffenderDriverId, "To: Driver")
         </div>
         <div class="editor-field">
             @Html.DropDownList("OffenderDriverId", String.Empty)
-            @Html.ValidationMessageFor(model => model.OffenderDriverId)
+            @Html.ValidationMessageFor(model => model.OffenderDriver.OffenderDriverId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OffenderVehicleId, "To: Vehicle")
+            @Html.LabelFor(model => model.OffenderVehicle.OffenderVehicleId, "To: Vehicle")
         </div>
         <div class="editor-field">
             @Html.DropDownList("OffenderVehicleId", String.Empty)
-            @Html.ValidationMessageFor(model => model.OffenderVehicleId)
+            @Html.ValidationMessageFor(model => model.OffenderVehicle.OffenderVehicleId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OffenceTypeId, "Offence Type")
+            @Html.LabelFor(model => model.Ticket.OffenceTypeId, "Offence Type")
         </div>
         <div class="editor-field">
             @Html.DropDownList("OffenceTypeId", String.Empty)
-            @Html.ValidationMessageFor(model => model.OffenceTypeId)
+            @Html.ValidationMessageFor(model => model.Ticket.OffenceTypeId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TicketAmount)
+            @Html.LabelFor(model => model.Ticket.TicketAmount)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TicketAmount)
-            @Html.ValidationMessageFor(model => model.TicketAmount)
+            @Html.EditorFor(model => model.Ticket.TicketAmount)
+            @Html.ValidationMessageFor(model => model.Ticket.TicketAmount)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TicketDiscrption)
+            @Html.LabelFor(model => model.Ticket.TicketDiscrption)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TicketDiscrption)
-            @Html.ValidationMessageFor(model => model.TicketDiscrption)
+            @Html.EditorFor(model => model.Ticket.TicketDiscrption)
+            @Html.ValidationMessageFor(model => model.Ticket.TicketDiscrption)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.IssueDate)
+            @Html.LabelFor(model => model.Ticket.IssueDate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.IssueDate)
-            @Html.ValidationMessageFor(model => model.IssueDate)
+            @Html.EditorFor(model => model.Ticket.IssueDate)
+            @Html.ValidationMessageFor(model => model.Ticket.IssueDate)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ExpiryDate)
+            @Html.LabelFor(model => model.Ticket.ExpiryDate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ExpiryDate)
-            @Html.ValidationMessageFor(model => model.ExpiryDate)
+            @Html.EditorFor(model => model.Ticket.ExpiryDate)
+            @Html.ValidationMessageFor(model => model.Ticket.ExpiryDate)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CapturedDate)
+            @Html.LabelFor(model => model.Ticket.CapturedDate)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CapturedDate)
-            @Html.ValidationMessageFor(model => model.CapturedDate)
+            @Html.EditorFor(model => model.Ticket.CapturedDate)
+            @Html.ValidationMessageFor(model => model.Ticket.CapturedDate)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserId, "User")
+            @Html.LabelFor(model => model.Ticket.UserId, "User")
         </div>
         <div class="editor-field">
             @Html.DropDownList("UserId", String.Empty)
-            @Html.ValidationMessageFor(model => model.UserId)
+            @Html.ValidationMessageFor(model => model.Ticket.UserId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.IssuePlace)
+            @Html.LabelFor(model => model.Ticket.IssuePlace)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.IssuePlace)
-            @Html.ValidationMessageFor(model => model.IssuePlace)
+            @Html.EditorFor(model => model.Ticket.IssuePlace)
+            @Html.ValidationMessageFor(model => model.Ticket.IssuePlace)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.PeaceOfficerCapacityId, "PeaceOfficerCapacity")
+            @Html.LabelFor(model => model.Ticket.PeaceOfficerCapacityId, "PeaceOfficerCapacity")
         </div>
         <div class="editor-field">
             @Html.DropDownList("PeaceOfficerCapacityId", String.Empty)
-            @Html.ValidationMessageFor(model => model.PeaceOfficerCapacityId)
+            @Html.ValidationMessageFor(model => model.Ticket.PeaceOfficerCapacityId)
         </div>
 
         <p>
