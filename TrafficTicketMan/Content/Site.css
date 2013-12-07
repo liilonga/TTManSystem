@@ -754,3 +754,11 @@ tr.pager td {
             margin: 0;
         }
 }
+
+.subSec{
+    background-color: #115704;
+    padding: 15px;
+    color: #fff;
+    border: 1px solid #333;
+    margin: 10px;
+}

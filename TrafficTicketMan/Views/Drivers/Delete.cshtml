@@ -1,0 +1,103 @@
+﻿@model TrafficTicketMan.Models.OffenderDriver
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>OffenderDriver</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DrivingLicenseNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DrivingLicenseNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContactNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ResidentialAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ResidentialAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BusinessAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BusinessAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PostalAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PostalAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Occupation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Occupation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nationality.NationalityId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nationality.NationalityId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDType.IDDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDType.IDDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDNumber)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

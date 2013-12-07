@@ -7,14 +7,15 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Ticket</legend>
 
-        
+
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Ticket.PoliceStationId, "Police Station")
@@ -72,20 +73,168 @@
             @Html.ValidationMessageFor(model => model.Ticket.EntityId)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.OffenderDriver.OffenderDriverId, "To: Driver")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("OffenderDriverId", String.Empty)
-            @Html.ValidationMessageFor(model => model.OffenderDriver.OffenderDriverId)
+        @*<div class="editor-label">
+                @Html.LabelFor(model => model.OffenderDriver.OffenderDriverId, "To: Driver")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("OffenderDriverId", String.Empty)
+                @Html.ValidationMessageFor(model => model.OffenderDriver.OffenderDriverId)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OffenderVehicle.OffenderVehicleId, "To: Vehicle")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("OffenderVehicleId", String.Empty)
+                @Html.ValidationMessageFor(model => model.OffenderVehicle.OffenderVehicleId)
+            </div>*@
+
+        <div id="secDriver" class="subSec">
+            <!--Drivers: Begins here-->
+            <table border="1">
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.DrivingLicenseNumber)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.DrivingLicenseNumber)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.DrivingLicenseNumber)
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.FName)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.FName)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.FName)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.LName)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.LName)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.LName)
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.ContactNumber)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.ContactNumber)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.ContactNumber)
+                        </div>
+                    </td>
+                    <td>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.ResidentialAddress)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.ResidentialAddress)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.ResidentialAddress)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.BusinessAddress)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.BusinessAddress)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.BusinessAddress)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.PostalAddress)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.PostalAddress)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.PostalAddress)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.Occupation)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.Occupation)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.Occupation)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.Sex)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.Sex)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.Sex)
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.NationalityId, "Nationality")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("NationalityId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.NationalityId)
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.IDTypeId, "IDType")
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownList("IDTypeId", String.Empty)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.IDTypeId)
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.OffenderDriver.IDNumber)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.OffenderDriver.IDNumber)
+                            @Html.ValidationMessageFor(model => model.OffenderDriver.IDNumber)
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            <!--Drivers: Ends here-->
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.OffenderVehicle.OffenderVehicleId, "To: Vehicle")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("OffenderVehicleId", String.Empty)
-            @Html.ValidationMessageFor(model => model.OffenderVehicle.OffenderVehicleId)
+        <div id="secVehicle" class="subSec">
+            <!--Vehicle: Begins here-->
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OffenderVehicle.VehicelRegistrationNumber)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.OffenderVehicle.VehicelRegistrationNumber)
+                @Html.ValidationMessageFor(model => model.OffenderVehicle.VehicelRegistrationNumber)
+            </div>
+            <!--Vehicle: Ends here-->
         </div>
 
         <div class="editor-label">
@@ -173,3 +322,24 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+@Scripts.Render("~/bundles/jquery")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //hide the driver and vehicle fields when the page opens/loads
+        $("#secDriver").hide();
+        $("#secVehicle").hide();
+
+        var tickedIssedOn = $("#EntityId");
+        tickedIssedOn.change(function () {
+            if (tickedIssedOn.val() == 1) {
+                $("#secDriver").show("slow");
+                $("#secVehicle").hide("slow");
+            } else {
+                $("#secDriver").hide("slow");
+                $("#secVehicle").show("slow");
+            }
+        });
+    });
+</script>

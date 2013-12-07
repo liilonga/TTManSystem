@@ -57,6 +57,10 @@ namespace TrafficTicketMan.Controllers
             ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId");
             ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName");
             ViewBag.PeaceOfficerCapacityId = new SelectList(db.PeaceOfficerCapacities, "PeaceOfficerCapacityId", "Capacity");
+
+            ViewBag.NationalityId = new SelectList(db.Nationalities, "NationalityId", "NationalityId");
+            ViewBag.IDTypeId = new SelectList(db.IDTypes, "IDTypeId", "IDDescription");
+
             return View();
         }
 

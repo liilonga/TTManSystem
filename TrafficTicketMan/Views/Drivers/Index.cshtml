@@ -1,0 +1,99 @@
+﻿@model IEnumerable<TrafficTicketMan.Models.OffenderDriver>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DrivingLicenseNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResidentialAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostalAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Occupation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality.NationalityId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDType.IDDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrivingLicenseNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResidentialAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusinessAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostalAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Occupation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nationality.NationalityId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDType.IDDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OffenderDriverId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OffenderDriverId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OffenderDriverId })
+        </td>
+    </tr>
+}
+
+</table>

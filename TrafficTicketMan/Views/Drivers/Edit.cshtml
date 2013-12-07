@@ -1,0 +1,126 @@
+﻿@model TrafficTicketMan.Models.OffenderDriver
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>OffenderDriver</legend>
+
+        @Html.HiddenFor(model => model.OffenderDriverId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DrivingLicenseNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DrivingLicenseNumber)
+            @Html.ValidationMessageFor(model => model.DrivingLicenseNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FName)
+            @Html.ValidationMessageFor(model => model.FName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LName)
+            @Html.ValidationMessageFor(model => model.LName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ContactNumber)
+            @Html.ValidationMessageFor(model => model.ContactNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResidentialAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResidentialAddress)
+            @Html.ValidationMessageFor(model => model.ResidentialAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BusinessAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BusinessAddress)
+            @Html.ValidationMessageFor(model => model.BusinessAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostalAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostalAddress)
+            @Html.ValidationMessageFor(model => model.PostalAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Occupation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Occupation)
+            @Html.ValidationMessageFor(model => model.Occupation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sex)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sex)
+            @Html.ValidationMessageFor(model => model.Sex)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NationalityId, "Nationality")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("NationalityId", String.Empty)
+            @Html.ValidationMessageFor(model => model.NationalityId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDTypeId, "IDType")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDTypeId", String.Empty)
+            @Html.ValidationMessageFor(model => model.IDTypeId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDNumber)
+            @Html.ValidationMessageFor(model => model.IDNumber)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
