@@ -206,6 +206,7 @@
     <Compile Include="Models\OffenderCar.cs" />
     <Compile Include="Models\OffenderDriver.cs" />
     <Compile Include="Models\OfficeDeployment.cs" />
+    <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\PeaceOfficerCapacity.cs" />
     <Compile Include="Models\PoliceStation.cs" />
     <Compile Include="Models\Region.cs" />

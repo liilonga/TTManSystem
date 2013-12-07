@@ -26,5 +26,6 @@ namespace TrafficTicketMan.Models
         public DbSet<Nationality> Nationalities { get; set; }
         public DbSet<PeaceOfficerCapacity> PeaceOfficerCapacities { get; set; }
         public DbSet<PoliceStation> PoliceStations { get; set; }
+        public DbSet<Payment> Payments { get; set; }
     }
 }
