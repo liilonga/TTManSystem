@@ -11,7 +11,8 @@ namespace TrafficTicketMan.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DefaultConnection")
+            //: base("DefaultConnection")
+            : base("TTMDataContext")
         {
         }
 

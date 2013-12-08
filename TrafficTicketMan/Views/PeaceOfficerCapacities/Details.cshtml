@@ -1,0 +1,22 @@
+﻿@model TrafficTicketMan.Models.PeaceOfficerCapacity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PeaceOfficerCapacity</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Capacity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Capacity)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PeaceOfficerCapacityId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

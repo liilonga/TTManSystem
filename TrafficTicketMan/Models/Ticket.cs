@@ -11,6 +11,10 @@ namespace TrafficTicketMan.Models
         public int TicketId { get; set; }
 
         [Required]
+        [Display(Name = "Ticket No.")]
+        public string TicketNo { get; set; }
+
+        [Required]
         [Display(Name = "Ticket Issued On")]
         public int EntityId { get; set; }
         [Display(Name = "Ticket Issued On")]
@@ -66,7 +70,6 @@ namespace TrafficTicketMan.Models
         [Required]
         [Display(Name = "Issued By")]
         public int UserId { get; set; }
-        public User User { get; set; }
 
         [Required]
         [Display(Name = "Issue Place")]

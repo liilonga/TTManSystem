@@ -18,7 +18,7 @@ namespace TrafficTicketMan.Controllers
 
         public ActionResult Index()
         {
-            var tickets = db.Tickets.Include(t => t.Entity).Include(t => t.PoliceStation).Include(t => t.InvestigationOfficer).Include(t => t.OffenceType).Include(t => t.OffenderDriver).Include(t => t.OffenderVehicle).Include(t => t.User).Include(t => t.PeaceOfficerCapacity);
+            var tickets = db.Tickets.Include(t => t.Entity).Include(t => t.PoliceStation).Include(t => t.InvestigationOfficer).Include(t => t.OffenceType).Include(t => t.OffenderDriver).Include(t => t.OffenderVehicle).Include(t => t.PeaceOfficerCapacity);
             return View(tickets.ToList());
         }
 
@@ -55,10 +55,10 @@ namespace TrafficTicketMan.Controllers
             ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName");
             ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber");
             ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId");
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName");
+            //ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName");
             ViewBag.PeaceOfficerCapacityId = new SelectList(db.PeaceOfficerCapacities, "PeaceOfficerCapacityId", "Capacity");
 
-            ViewBag.NationalityId = new SelectList(db.Nationalities, "NationalityId", "NationalityId");
+            ViewBag.NationalityId = new SelectList(db.Nationalities, "NationalityId", "Country");
             ViewBag.IDTypeId = new SelectList(db.IDTypes, "IDTypeId", "IDDescription");
 
             return View();
@@ -92,7 +92,7 @@ namespace TrafficTicketMan.Controllers
             ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName", ticket.OffenceTypeId);
             ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber", ticket.OffenderDriverId);
             ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId", ticket.OffenderVehicleId);
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName", ticket.UserId);
+            //ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName", ticket.UserId);
             ViewBag.PeaceOfficerCapacityId = new SelectList(db.PeaceOfficerCapacities, "PeaceOfficerCapacityId", "Capacity", ticket.PeaceOfficerCapacityId);
             return View(ticket);
         }
@@ -113,7 +113,7 @@ namespace TrafficTicketMan.Controllers
             ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName", ticket.OffenceTypeId);
             ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber", ticket.OffenderDriverId);
             ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId", ticket.OffenderVehicleId);
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName", ticket.UserId);
+            //ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName", ticket.UserId);
             ViewBag.PeaceOfficerCapacityId = new SelectList(db.PeaceOfficerCapacities, "PeaceOfficerCapacityId", "Capacity", ticket.PeaceOfficerCapacityId);
             return View(ticket);
         }
@@ -137,7 +137,7 @@ namespace TrafficTicketMan.Controllers
             ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName", ticket.OffenceTypeId);
             ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber", ticket.OffenderDriverId);
             ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId", ticket.OffenderVehicleId);
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName", ticket.UserId);
+            //ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName", ticket.UserId);
             ViewBag.PeaceOfficerCapacityId = new SelectList(db.PeaceOfficerCapacities, "PeaceOfficerCapacityId", "Capacity", ticket.PeaceOfficerCapacityId);
             return View(ticket);
         }

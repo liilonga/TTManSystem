@@ -23,7 +23,9 @@ namespace TrafficTicketMan.Models
         [Required]
         [Display(Name = "Captured By")]
         public int UserId { get; set; }
-        public User User { get; set; }
+
+        [Display(Name = "Reference / Invoice No.")]
+        public string Reference { get; set; }
 
     }
 }

@@ -15,63 +15,94 @@
     <fieldset>
         <legend>Ticket</legend>
 
+        <table>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.TicketNo)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.TicketNo)
+                        @Html.ValidationMessageFor(model => model.Ticket.TicketNo)
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.PoliceStationId, "Police Station")
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownList("PoliceStationId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.Ticket.PoliceStationId)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.CRnumber)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.CRnumber)
+                        @Html.ValidationMessageFor(model => model.Ticket.CRnumber)
+                    </div>
+                </td>
+                <td>
 
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.InvestigationOfficerId, "Investigation Officer")
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownList("InvestigationOfficerId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.Ticket.InvestigationOfficerId)
+                    </div>
+                </td>
+            </tr>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.PoliceStationId, "Police Station")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("PoliceStationId", String.Empty)
-            @Html.ValidationMessageFor(model => model.Ticket.PoliceStationId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.CRnumber)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.CRnumber)
-            @Html.ValidationMessageFor(model => model.Ticket.CRnumber)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.PlaceOfTrial)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.PlaceOfTrial)
-            @Html.ValidationMessageFor(model => model.Ticket.PlaceOfTrial)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.InvestigationOfficerId, "Investigation Officer")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("InvestigationOfficerId", String.Empty)
-            @Html.ValidationMessageFor(model => model.Ticket.InvestigationOfficerId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.CourtNo)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.CourtNo)
-            @Html.ValidationMessageFor(model => model.Ticket.CourtNo)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.TrialDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.TrialDate)
-            @Html.ValidationMessageFor(model => model.Ticket.TrialDate)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.EntityId, "Ticket Issued On")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("EntityId", String.Empty)
-            @Html.ValidationMessageFor(model => model.Ticket.EntityId)
-        </div>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.PlaceOfTrial)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.PlaceOfTrial)
+                        @Html.ValidationMessageFor(model => model.Ticket.PlaceOfTrial)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.CourtNo)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.CourtNo)
+                        @Html.ValidationMessageFor(model => model.Ticket.CourtNo)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.TrialDate)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.TrialDate)
+                        @Html.ValidationMessageFor(model => model.Ticket.TrialDate)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.EntityId, "Ticket Issued On")
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownList("EntityId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.Ticket.EntityId)
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
 
         @*<div class="editor-label">
                 @Html.LabelFor(model => model.OffenderDriver.OffenderDriverId, "To: Driver")
@@ -237,77 +268,98 @@
             <!--Vehicle: Ends here-->
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.OffenceTypeId, "Offence Type")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("OffenceTypeId", String.Empty)
-            @Html.ValidationMessageFor(model => model.Ticket.OffenceTypeId)
-        </div>
+        <table>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.OffenceTypeId, "Offence Type")
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownList("OffenceTypeId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.Ticket.OffenceTypeId)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.TicketAmount)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.TicketAmount)
+                        @Html.ValidationMessageFor(model => model.Ticket.TicketAmount)
+                    </div>
+                </td>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.TicketAmount)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.TicketAmount)
-            @Html.ValidationMessageFor(model => model.Ticket.TicketAmount)
-        </div>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.TicketDiscrption)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.TicketDiscrption)
+                        @Html.ValidationMessageFor(model => model.Ticket.TicketDiscrption)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.IssueDate)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.IssueDate)
+                        @Html.ValidationMessageFor(model => model.Ticket.IssueDate)
+                    </div>
+                </td>
+                <td>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.TicketDiscrption)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.TicketDiscrption)
-            @Html.ValidationMessageFor(model => model.Ticket.TicketDiscrption)
-        </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.IssuePlace)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.IssuePlace)
+                        @Html.ValidationMessageFor(model => model.Ticket.IssuePlace)
+                    </div>
+                </td>
+                <td>
+                    @*<div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.CapturedDate)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.CapturedDate)
+                        @Html.ValidationMessageFor(model => model.Ticket.CapturedDate)
+                    </div>*@
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.ExpiryDate)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Ticket.ExpiryDate)
+                        @Html.ValidationMessageFor(model => model.Ticket.ExpiryDate)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Ticket.PeaceOfficerCapacityId, "Peace Officer Capacity")
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownList("PeaceOfficerCapacityId", String.Empty)
+                        @Html.ValidationMessageFor(model => model.Ticket.PeaceOfficerCapacityId)
+                    </div>
+                </td>
+                <td>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.IssueDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.IssueDate)
-            @Html.ValidationMessageFor(model => model.Ticket.IssueDate)
-        </div>
+                </td>
+                <td></td>
+            </tr>
+        </table>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.ExpiryDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.ExpiryDate)
-            @Html.ValidationMessageFor(model => model.Ticket.ExpiryDate)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.CapturedDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.CapturedDate)
-            @Html.ValidationMessageFor(model => model.Ticket.CapturedDate)
-        </div>
-
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.Ticket.UserId, "User")
         </div>
         <div class="editor-field">
             @Html.DropDownList("UserId", String.Empty)
             @Html.ValidationMessageFor(model => model.Ticket.UserId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.IssuePlace)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ticket.IssuePlace)
-            @Html.ValidationMessageFor(model => model.Ticket.IssuePlace)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ticket.PeaceOfficerCapacityId, "PeaceOfficerCapacity")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("PeaceOfficerCapacityId", String.Empty)
-            @Html.ValidationMessageFor(model => model.Ticket.PeaceOfficerCapacityId)
-        </div>
+        </div>*@
 
         <p>
             <input type="submit" value="Create" />

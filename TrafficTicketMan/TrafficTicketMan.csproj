@@ -186,8 +186,11 @@
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\EntitiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IDTypesController.cs" />
     <Compile Include="Controllers\InvestigationOfficersController.cs" />
+    <Compile Include="Controllers\NationalitiesController.cs" />
     <Compile Include="Controllers\OffenceTypesController.cs" />
+    <Compile Include="Controllers\PeaceOfficerCapacitiesController.cs" />
     <Compile Include="Controllers\PoliceStationsController.cs" />
     <Compile Include="Controllers\RegionController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
@@ -216,8 +219,6 @@
     <Compile Include="Models\InvestigationOfficer.cs" />
     <Compile Include="Models\TTMDataContext.cs" />
     <Compile Include="Models\TTMDataContextInitializer.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\Zone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\TicketDriverVehicleViewModel.cs" />
@@ -380,6 +381,21 @@
     <Content Include="Views\Vehicles\Create.cshtml" />
     <Content Include="Views\Vehicles\Edit.cshtml" />
     <Content Include="Views\Vehicles\Delete.cshtml" />
+    <Content Include="Views\Nationalities\Index.cshtml" />
+    <Content Include="Views\Nationalities\Details.cshtml" />
+    <Content Include="Views\Nationalities\Create.cshtml" />
+    <Content Include="Views\Nationalities\Edit.cshtml" />
+    <Content Include="Views\Nationalities\Delete.cshtml" />
+    <Content Include="Views\IDTypes\Index.cshtml" />
+    <Content Include="Views\IDTypes\Details.cshtml" />
+    <Content Include="Views\IDTypes\Create.cshtml" />
+    <Content Include="Views\IDTypes\Edit.cshtml" />
+    <Content Include="Views\IDTypes\Delete.cshtml" />
+    <Content Include="Views\PeaceOfficerCapacities\Index.cshtml" />
+    <Content Include="Views\PeaceOfficerCapacities\Details.cshtml" />
+    <Content Include="Views\PeaceOfficerCapacities\Create.cshtml" />
+    <Content Include="Views\PeaceOfficerCapacities\Edit.cshtml" />
+    <Content Include="Views\PeaceOfficerCapacities\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<TrafficTicketMan.Models.IDType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDTypeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDTypeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDTypeId })
+        </td>
+    </tr>
+}
+
+</table>

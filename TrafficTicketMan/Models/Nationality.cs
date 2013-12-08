@@ -10,6 +10,6 @@ namespace TrafficTicketMan.Models
     {
         public int NationalityId { get; set; }
         [Required]
-        public int Country { get; set; }
+        public string Country { get; set; }
     }
 }

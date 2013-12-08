@@ -1,0 +1,22 @@
+﻿@model TrafficTicketMan.Models.IDType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>IDType</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDDescription)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDTypeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
