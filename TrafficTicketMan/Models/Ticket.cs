@@ -48,11 +48,11 @@ namespace TrafficTicketMan.Models
         public OffenceType OffenceType { get; set; }
 
         [Display(Name = "To (Driver)")]
-        public int OffenderDriverId { get; set; }
+        public int? OffenderDriverId { get; set; }
         public OffenderDriver OffenderDriver { get; set; }
 
         [Display(Name = "To (Vehicle)")]
-        public int OffenderVehicleId { get; set; }
+        public int? OffenderVehicleId { get; set; }
         public OffenderVehicle OffenderVehicle { get; set; }
 
         [Required]

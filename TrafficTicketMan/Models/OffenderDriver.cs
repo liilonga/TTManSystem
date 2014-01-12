@@ -10,6 +10,7 @@ namespace TrafficTicketMan.Models
     {
         public int OffenderDriverId { get; set; }
 
+        [Display(Name = "License Number")]
         public string DrivingLicenseNumber { get; set; }
 
         [Required]
@@ -23,7 +24,7 @@ namespace TrafficTicketMan.Models
        [Display(Name = "Contact Number")]
        public string ContactNumber { get; set; }
 
-       [Display(Name = "Residentia lAddress")]
+       [Display(Name = "Residential Address")]
        public string ResidentialAddress { get; set; }
 
        [Display(Name = "Business Address")]
@@ -35,8 +36,9 @@ namespace TrafficTicketMan.Models
        [Display(Name = "Occupation or Status")]
        public string Occupation { get; set; }
 
-       //[Display(Name = "Sex")]
-       public string Sex { get; set; }
+       [Display(Name = "Sex")]
+       public int SexId { get; set; }
+       public Sex Sex { get; set; }
 
        public int NationalityId { get; set; }
        public Nationality Nationality { get; set; }

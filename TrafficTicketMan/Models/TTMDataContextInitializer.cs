@@ -43,6 +43,10 @@ namespace TrafficTicketMan.Models
 
             //Peace Officer Capacity
             context.PeaceOfficerCapacities.Add(new PeaceOfficerCapacity() { Capacity="Traffic Officer"});
+
+            //Sex
+            context.Sex.Add(new Sex() { SexType = "Male" });
+            context.Sex.Add(new Sex() { SexType = "Female" });
         }
     }
 }

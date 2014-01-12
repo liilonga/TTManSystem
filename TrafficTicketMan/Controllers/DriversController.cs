@@ -42,6 +42,7 @@ namespace TrafficTicketMan.Controllers
         {
             ViewBag.NationalityId = new SelectList(db.Nationalities, "NationalityId", "NationalityId");
             ViewBag.IDTypeId = new SelectList(db.IDTypes, "IDTypeId", "IDDescription");
+            ViewBag.SexId = new SelectList(db.Sex, "SexId","SexType");
             return View();
         }
 

@@ -162,7 +162,7 @@
                             @Html.LabelFor(model => model.OffenderDriver.ContactNumber)
                         </div>
                         <div class="editor-field">
-                            @Html.EditorFor(model => model.OffenderDriver.ContactNumber)
+                            @Html.EditorFor(model => model.OffenderDriver.ContactNumber,"+264")
                             @Html.ValidationMessageFor(model => model.OffenderDriver.ContactNumber)
                         </div>
                     </td>
@@ -209,10 +209,10 @@
                     </td>
                     <td>
                         <div class="editor-label">
-                            @Html.LabelFor(model => model.OffenderDriver.Sex)
+                            @Html.LabelFor(model => model.OffenderDriver.Sex, "Sex")
                         </div>
                         <div class="editor-field">
-                            @Html.EditorFor(model => model.OffenderDriver.Sex)
+                            @Html.DropDownList("SexId", String.Empty)
                             @Html.ValidationMessageFor(model => model.OffenderDriver.Sex)
                         </div>
                     </td>

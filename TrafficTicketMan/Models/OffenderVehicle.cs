@@ -8,6 +8,6 @@ namespace TrafficTicketMan.Models
     public class OffenderVehicle
     {
         public int OffenderVehicleId { get; set; }
-        public int VehicelRegistrationNumber { get; set; }
+        public string VehicelRegistrationNumber { get; set; }
     }
 }

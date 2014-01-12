@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TrafficTicketMan.Models;
+using TrafficTicketMan.ViewModels;
 
 namespace TrafficTicketMan.Controllers
 {
@@ -60,6 +61,8 @@ namespace TrafficTicketMan.Controllers
 
             ViewBag.NationalityId = new SelectList(db.Nationalities, "NationalityId", "Country");
             ViewBag.IDTypeId = new SelectList(db.IDTypes, "IDTypeId", "IDDescription");
+            //ViewBag.SexId = new SelectList(db.Sex, "SexId", "SexType");
+            ViewBag.SexId = new SelectList(db.Sex, "SexId", "SexType");
 
             return View();
         }
@@ -68,33 +71,125 @@ namespace TrafficTicketMan.Controllers
         // POST: /Tickets/Create
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Ticket ticket)
+        [ValidateAntiForgeryToken]  
+        public ActionResult Create(TicketDriverVehicleViewModel ticketDriverVehicleViewModel, int EntityId, int InvestigationOfficerId,
+            int OffenceTypeId, int SexId, int? OffenderDriverId, int? OffenderVehicleId, int PeaceOfficerCapacityId, int NationalityId, int IDTypeId,
+            int PoliceStationId)   
         {
-            if (ModelState.IsValid)
+
+            var ticket1 = new Ticket()
             {
-                db.Tickets.Add(ticket);
+                TicketNo = ticketDriverVehicleViewModel.Ticket.TicketNo,
+                EntityId = EntityId,
+                PoliceStationId = PoliceStationId,
+                CRnumber = ticketDriverVehicleViewModel.Ticket.CRnumber,
+                PlaceOfTrial = ticketDriverVehicleViewModel.Ticket.PlaceOfTrial,
+                InvestigationOfficerId = InvestigationOfficerId,
+                CourtNo = ticketDriverVehicleViewModel.Ticket.CourtNo,
+                TrialDate = ticketDriverVehicleViewModel.Ticket.TrialDate,
+                OffenceTypeId = OffenceTypeId,
+                //OffenderDriverId = driverId,
+                //OffenderVehicleId = vehicleId,
+                TicketAmount = ticketDriverVehicleViewModel.Ticket.TicketAmount,
+                TicketDiscrption = ticketDriverVehicleViewModel.Ticket.TicketDiscrption,
+                IssueDate = ticketDriverVehicleViewModel.Ticket.IssueDate,
+                ExpiryDate = ticketDriverVehicleViewModel.Ticket.ExpiryDate,
+                CapturedDate = DateTime.Now,
+                UserId = 1,
+                IssuePlace = ticketDriverVehicleViewModel.Ticket.IssuePlace,
+                PeaceOfficerCapacityId = PeaceOfficerCapacityId
+            };
+
+            if (ticketDriverVehicleViewModel != null)
+            {
+                Utility utility = new Utility();
+                int driverId = 0;
+                int vehicleId = 0;
+
+                //Save Driver
+                if (ticketDriverVehicleViewModel.OffenderDriver != null)
+                {
+                    var postedDriver = ticketDriverVehicleViewModel.OffenderDriver;
+
+                    OffenderDriver driver = utility.GetDriver(postedDriver.IDNumber, postedDriver.DrivingLicenseNumber);
+
+                    //Check if driver exists already in the database
+                    if (driver != null)
+                        driverId = driver.OffenderDriverId;
+                    else
+                    {
+                        var newDriver = new OffenderDriver()
+                        {
+                            DrivingLicenseNumber = postedDriver.DrivingLicenseNumber,
+                            FName = postedDriver.FName,
+                            LName = postedDriver.LName,
+                            ContactNumber = postedDriver.ContactNumber,
+                            ResidentialAddress = postedDriver.ResidentialAddress,
+                            BusinessAddress = postedDriver.BusinessAddress,
+                            PostalAddress = postedDriver.PostalAddress,
+                            Occupation = postedDriver.Occupation,
+                            SexId = SexId,
+                            NationalityId = NationalityId,
+                            IDTypeId = IDTypeId,
+                            IDNumber = postedDriver.IDNumber
+                        };
+
+                        db.OffenderDrivers.Add(newDriver);
+                        db.SaveChanges();
+
+                        driverId = newDriver.OffenderDriverId;
+                    }
+
+                    //Assign driver Id to ticket
+                    ticket1.OffenderDriverId = driverId;
+                }
+                //Save Vehicle
+                else if (ticketDriverVehicleViewModel.OffenderVehicle != null)
+                {
+                    var postedVehicle = ticketDriverVehicleViewModel.OffenderVehicle;
+
+                    OffenderVehicle vehicle = utility.GetVehicle(postedVehicle.VehicelRegistrationNumber);
+                    //Check if driver exists already in the database
+                    if (vehicle != null)
+                        vehicleId = vehicle.OffenderVehicleId;
+                    else
+                    {
+                        var newVehicle = new OffenderVehicle()
+                        {
+                            VehicelRegistrationNumber = postedVehicle.VehicelRegistrationNumber
+                        };
+
+                        db.OffenderVehicles.Add(newVehicle);
+                        db.SaveChanges();
+
+                        vehicleId = newVehicle.OffenderVehicleId;
+                    }
+                    //Assign vehicle Id to ticket
+                    ticket1.OffenderVehicleId = vehicleId;
+                }
+
+                db.Tickets.Add(ticket1);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EntityId = new SelectList(db.Entities, "EntityId", "EntityName", ticket.EntityId);
-            ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", "PoliceStationId", ticket.PoliceStationId);
+            ViewBag.EntityId = new SelectList(db.Entities, "EntityId", "EntityName", ticketDriverVehicleViewModel.Ticket.EntityId);
+            ViewBag.PoliceStationId = new SelectList(db.PoliceStations, "PoliceStationId", ".TicketPoliceStationId", ticketDriverVehicleViewModel.Ticket.PoliceStationId);
 
             var InvestigationOfficers = from a in db.InvestigationOfficers
-                                        select new 
+                                        select new
                                         {
                                             InvestigationOfficerId = a.InvestigationOfficerId,
-                                            InvestigationOfficerFullName = a.FName +" "+a.LName
+                                            InvestigationOfficerFullName = a.FName + " " + a.LName
                                         };
 
-            ViewBag.InvestigationOfficerId = new SelectList(InvestigationOfficers, "InvestigationOfficerId", "InvestigationOfficerFullName", ticket.InvestigationOfficerId);
-            ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName", ticket.OffenceTypeId);
-            ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber", ticket.OffenderDriverId);
-            ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId", ticket.OffenderVehicleId);
-            //ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName", ticket.UserId);
-            ViewBag.PeaceOfficerCapacityId = new SelectList(db.PeaceOfficerCapacities, "PeaceOfficerCapacityId", "Capacity", ticket.PeaceOfficerCapacityId);
-            return View(ticket);
+            ViewBag.InvestigationOfficerId = new SelectList(InvestigationOfficers, "InvestigationOfficerId", "InvestigationOfficerFullName", ticketDriverVehicleViewModel.Ticket.InvestigationOfficerId);
+            ViewBag.OffenceTypeId = new SelectList(db.OffenceTypes, "OffenceTypeId", "OffenceName", ticketDriverVehicleViewModel.Ticket.OffenceTypeId);
+            ViewBag.OffenderDriverId = new SelectList(db.OffenderDrivers, "OffenderDriverId", "DrivingLicenseNumber", ticketDriverVehicleViewModel.Ticket.OffenderDriverId);
+            ViewBag.OffenderVehicleId = new SelectList(db.OffenderVehicles, "OffenderVehicleId", "OffenderVehicleId", ticketDriverVehicleViewModel.Ticket.OffenderVehicleId);
+            ViewBag.PeaceOfficerCapacityId = new SelectList(db.PeaceOfficerCapacities, "PeaceOfficerCapacityId", "Capacity", ticketDriverVehicleViewModel.Ticket.PeaceOfficerCapacityId);
+            return View(ticketDriverVehicleViewModel);
+
         }
 
         //

@@ -27,6 +27,7 @@ namespace TrafficTicketMan.Models
         public DbSet<PeaceOfficerCapacity> PeaceOfficerCapacities { get; set; }
         public DbSet<PoliceStation> PoliceStations { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<Sex> Sex { get; set; }
 
         ////http://msdn.microsoft.com/en-US/data/jj591620
         ////http://forums.asp.net/p/1940806/5527150.aspx?EF+tables+causing+cause+cycles+or+multiple+cascade+paths+error+why+

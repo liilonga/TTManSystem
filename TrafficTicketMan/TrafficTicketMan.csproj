@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.13\lib\net45\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -206,19 +209,21 @@
     <Compile Include="Models\IDType.cs" />
     <Compile Include="Models\Nationality.cs" />
     <Compile Include="Models\OffenceType.cs" />
-    <Compile Include="Models\OffenderCar.cs" />
+    <Compile Include="Models\OffenderVehicle.cs" />
     <Compile Include="Models\OffenderDriver.cs" />
     <Compile Include="Models\OfficeDeployment.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\PeaceOfficerCapacity.cs" />
     <Compile Include="Models\PoliceStation.cs" />
     <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\Sex.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\Town.cs" />
     <Compile Include="Models\TrafficOffice.cs" />
     <Compile Include="Models\InvestigationOfficer.cs" />
     <Compile Include="Models\TTMDataContext.cs" />
     <Compile Include="Models\TTMDataContextInitializer.cs" />
+    <Compile Include="Models\Utility.cs" />
     <Compile Include="Models\Zone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\TicketDriverVehicleViewModel.cs" />
